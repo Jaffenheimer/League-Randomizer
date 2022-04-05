@@ -1,5 +1,6 @@
 const _ = require("lodash");
-const app = require("express")()
+const express = require("express");
+const app = express();
 
 /* import raw data */
 const items_raw = require("./data/item.json").data;
@@ -65,6 +66,8 @@ function random_selection() {
 	return { build, champion, summ_spells, runes }
 
 }
+
+app.use(express.static("public"));
 
 app.get("/random", (req, res) => {
 	const selection = random_selection();

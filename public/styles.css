@@ -1,0 +1,13 @@
+body {
+	display: flex;
+	align-items: center;
+	place-content: center;
+	height: 100vh;
+}
+
+.main {
+	border: 5px solid green;
+	border-radius: 15px;
+	padding: 30px 15px;
+
+}
