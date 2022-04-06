@@ -3,10 +3,45 @@ body {
 	align-items: center;
 	place-content: center;
 	height: 100vh;
+	margin: 0;
+	padding: 0;
+	background-color: #170a2c;
+}
+
+* {
+	color: whitesmoke;
+}
+
+img {
+	margin-right: 10px;
+	border-radius: 50%;
 }
 
 .main {
 	border: 5px solid green;
 	border-radius: 15px;
 	padding: 30px 15px;
+	min-width: 50%;
+}
+
+.main>div {
+	display: flex;
+	flex-direction: column;
+	height: min-content;
+}
+
+.main>#champion {
+	flex-direction: row;
+}
+
+.main>div>div {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: min-content;
+}
+
+.main div p {
+	font-weight: bold;
+	margin: 5px;
 }
