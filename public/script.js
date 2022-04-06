@@ -6,7 +6,7 @@ fetch("/random")
 	.then(
 		r => r.json())
 	.then(data => {
-		$("champion-name").innerText = data.champion;
+		$("champion-name").innerText = data.champion.name;
 
 		let runes = "";
 		data.runes.primary.forEach(r => runes += r.name + "\n");

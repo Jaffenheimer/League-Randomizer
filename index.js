@@ -17,7 +17,7 @@ let full_items = Object.keys(items_raw)
 		item => !item.tags.includes("GoldPer")
 			&& !item.tags.includes("Consumable")
 			&& !item.tags.includes("Trinket")
-			&& (item.in_store ?? true)
+			&& (item.inStore ?? true)
 			&& item.maps[11]
 			&& item.into == undefined);
 
@@ -56,9 +56,9 @@ function random_selection() {
 	const build = [];
 	build.push(_.sample(boots, 1));
 	build.push(_.sample(mythics, 1));
-	const items = _.sampleSize(full_items, 4).forEach(i => build.push(i))
+	_.sampleSize(full_items, 4).forEach(i => build.push(i))
 
-	const champion = _.sample(Object.keys(champions_raw), 1);
+	const champion = _.sample(Object.values(champions_raw), 1);
 	const summ_spells = [];
 	_.sampleSize(summoners, 2).map(s => summ_spells.push(s))
 
@@ -79,7 +79,6 @@ app.get("/random", (req, res) => {
 app.listen(80, () => {
 	console.log("Listening on port 80...")
 })
-
 
 
 
