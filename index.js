@@ -17,6 +17,7 @@ let full_items = Object.keys(items_raw)
 		item => !item.tags.includes("GoldPer")
 			&& !item.tags.includes("Consumable")
 			&& !item.tags.includes("Trinket")
+			&& (item.in_store ?? true)
 			&& item.maps[11]
 			&& item.into == undefined);
 
@@ -43,7 +44,7 @@ function random_runes() {
 		primary.push(_.sample(slot.runes));
 	}
 
-	for (let slot of _.sampleSize(_secondary.slots, 2)) {
+	for (let slot of _.sampleSize(_secondary.slots.slice(1, 3), 2)) {
 		secondary.push(_.sample(slot.runes));
 	}
 
